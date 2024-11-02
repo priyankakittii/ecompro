@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="d-flex justify-content-center align-items-center vh-100 flex-column">
+
+        <form action="signup.php" method="post" class="bg-secondary p-4" onsubmit="return validate()">
+            <h3 class="text-center text-white">Signup here....</h3>
+
+            <input name="uname" class="form-control mt-2" type="text" placeholder="enter username">
+            <input name="upass1" class="form-control mt-2" type="password" placeholder="enter password" id="pass1">
+            <input name="upass2" class="form-control mt-2" type="password" placeholder="retype password" id="pass2">
+            <select name="usertype">
+                <option>Vendor</option>
+                <option>Customer</option>
+            </select>
+            <div class="text-center">
+                <button class="btn btn -warning mt-3">Submit</button>
+            </div>
+        </form>
+        <div class="text_end">
+            <a href="login.html"><div class="text-center"><button class="btn btn mt-1">Login here</button></div></a>
+        </div>
+    </div>
+    <script>
+        function validate() {
+            pass1obj = document.getElementById("pass1")
+            pass2obj = document.getElementById("pass2")
+            if (pass1obj.value === pass2obj.value) {
+                return true
+            }
+            alert("Password mismatch!!");
+            return false
+        }
+
+    </script>
+
+</body>
+
+</html>
